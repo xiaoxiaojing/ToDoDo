@@ -1,0 +1,29 @@
+.ui-tabs {
+  width: 300px;
+  background: #ffeeee;
+}
+
+.tabs {
+  height: 50px;
+  line-height: 50px;
+}
+
+.tabs button {
+  padding: 0;
+  margin: 0;
+  width: 100px;
+  height: 50px;
+  border: 0;
+  background: #f5f5f5;
+  outline: none;
+}
+
+.tabs .choosed {
+  background: #ccc;
+}
+
+.contents {
+  height: 200px;
+  text-align: center;
+  padding-top: 20px;
+}
