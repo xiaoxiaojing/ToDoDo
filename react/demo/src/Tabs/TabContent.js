@@ -5,6 +5,6 @@ export default function TabContent ({
     children
 }) {
     return (
-        <div style={{display: isShow ? "block" : "none"}}>{children}</div>
+        <div style={{display: isShow ? "block" : "none"}} className="redButton greenButton">{children}</div>
     )
 }

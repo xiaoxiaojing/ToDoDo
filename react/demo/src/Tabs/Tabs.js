@@ -1,8 +1,10 @@
 import React, {Component, PropTypes} from 'react'
 import Tab from './Tab'
 import TabContent from './TabContent'
-import './Tabs.css'
-
+import styles from './Tabs.css'
+import styles2 from './Tabs2.css'
+console.log(styles);
+console.log(styles2.color);
 class Tabs extends Component {
     constructor (props) {
         super (props)
@@ -35,11 +37,11 @@ class Tabs extends Component {
     }
     render () {
         return (
-            <div className="ui-tabs">
-                <div className="tabs">
+            <div className={styles["ui-tabs"]}>
+                <div className={styles["tabs"] + " " + styles2.base2}>
                     {this.getTabs()}
                 </div>
-                <div className="contents">
+                <div className={styles.bg}>
                     {this.getContents()}
                 </div>
             </div>

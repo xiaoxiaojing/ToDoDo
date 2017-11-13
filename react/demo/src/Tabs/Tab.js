@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './Tabs.css'
 
 export default function Tab ({
     isChoose,
@@ -6,6 +7,6 @@ export default function Tab ({
     title
 }) {
     return (
-        <button className={`${isChoose ? "choosed": ""}`} onClick={onClick}>{title}</button>
+        <button className={`${isChoose ? styles.choosed: ""}`} onClick={onClick}>{title}</button>
     )
 }

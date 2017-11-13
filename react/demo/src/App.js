@@ -3,6 +3,7 @@ import {Counter} from './Counter'
 import {Tabs} from './Tabs'
 // import {Dialog} from './Dialog'
 import {Button} from './Button'
+import './Test/test'
 
 const Tab = Tabs.Tab
 class App extends Component {
@@ -24,6 +25,15 @@ class App extends Component {
     componentDidMount () {
         this.setState({
             testLog: "did" + new Date()
+        })
+
+        document.body.addEventListener("click", (e)=>{
+            if ( e.target && e.target.matches(".test") ) {
+                return
+            }
+            this.setState({
+                isOpen: false
+            })
         })
     }
 
@@ -63,9 +73,13 @@ class App extends Component {
             isOpen: false
         })
     }
+    openDialogR = (e) => {
+        e.stopPropagation()
+    }
 
     render() {
-        console.log(this.state.testLog);
+        const {isOpen} = this.state
+        const area = 1
         return (
             <div className="App">
                 <Tabs
@@ -77,7 +91,9 @@ class App extends Component {
                     <Tab title="tab3">内容3</Tab>
                 </Tabs>
                 {/* <Counter/> */}
-                {/* <Button text="open" onClick={this.openDialog}/> */}
+                <Button text="open" onClick={this.openDialog}/>
+                <div className="test" onClick={this.openDialogR} style={{display: isOpen ? "block" : "none", position: "fixed", width: "100px", height: "100px", background: "#f5f5f5"}}></div>
+                <input type="radio"/>
             </div>
         );
     }
